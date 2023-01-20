@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR.Contracts" Version="1.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TestParlem.Api.Application.Contracts\TestParlem.Api.Application.Contracts.csproj" />
+    <ProjectReference Include="..\TestParlem.Api.Application\TestParlem.Api.Application.csproj" />
+    <ProjectReference Include="..\TestParlem.Api.Models\TestParlem.Api.Models.csproj" />
+    <ProjectReference Include="..\TestParlem.Api.Persistence\TestParlem.Api.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,81 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1>
+        Customer
+        @Html.ValueFor(m => m.Customer.GivenName)
+    </h1>
+    <div class="d-flex flex-row justify-content-center">
+        <div class="p-lg-2">
+            <b>@Html.LabelFor(m => m.Customer.Id)</b>
+        </div>
+        <div class="p-2">
+            @Html.ValueFor(m => m.Customer.Id)
+        </div>
+        <div class="p-lg-2">
+            <b>@Html.LabelFor(m => m.Customer.CustomerId)</b>
+        </div>
+        <div class="p-2">
+            @Html.ValueFor(m => m.Customer.CustomerId)
+        </div>
+    </div>
+    <div class="d-flex flex-row justify-content-center">
+        <div class="p-lg-2">
+            <b>@Html.LabelFor(m => m.Customer.DocType)</b>
+        </div>
+        <div class="p-2">
+            @Html.ValueFor(m => m.Customer.DocType)
+        </div>
+        <div class="p-lg-2">
+            <b>@Html.LabelFor(m => m.Customer.DocNum)</b>
+        </div>
+        <div class="p-2">
+            @Html.ValueFor(m => m.Customer.DocNum)
+        </div>
+    </div>
+    <div class="d-flex flex-row justify-content-center">
+        <div class="p-lg-2">
+            <b>@Html.LabelFor(m => m.Customer.Email)</b>
+        </div>
+        <div class="p-2">
+            @Html.ValueFor(m => m.Customer.Email)
+        </div>
+        <div class="p-lg-2">
+            <b>@Html.LabelFor(m => m.Customer.FamilyName1)</b>
+        </div>
+        <div class="p-2">
+            @Html.ValueFor(m => m.Customer.FamilyName1)
+        </div>
+    </div>
+    <div class="d-flex flex-row justify-content-center">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th> Id </th>
+                    <th> ProductName </th>
+                    <th> ProductTypeName </th>
+                    <th> TerminalNumber </th>
+                    <th> SoldAt </th>
+                    <th> CustomerId </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Customer.Products)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ProductName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ProductTypeName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.TerminalNumber)</td>
+                        <td>@Html.DisplayFor(modelItem => item.SoldAt)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CustomerId)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
